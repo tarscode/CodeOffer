@@ -4,16 +4,16 @@
  * 时间: 16/9/16 下午3:43
  * 题目: 二进制中1的个数
  * 内容:
- * 版本: V1.0
- * 运行时间: 31ms
- * 备注: 将整数转化成二进制字符串，进行匹配统计
+ * 版本: V1.1
+ * 运行时间: 30ms
+ * 备注: 移位方法
  */
 public class NumberOf1 {
     public int NumberOf1(int n) {
-        char[] arr = Integer.toBinaryString(n).toCharArray();
         int num = 0;
-        for (char a : arr) {
-            num = a == '1' ? ++num : num;
+        while (n != 0) {
+            num++;
+            n = n & (n - 1);
         }
         return num;
     }
