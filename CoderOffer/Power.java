@@ -11,15 +11,16 @@
  */
 public class Power {
     public double Power(double base, int exponent) {
-        if(base<0.000001&&base>-0.000001){
+        if (base < 0.000001 && base > -0.000001) {
             return 0.0;
         }
-        if(exponent<0){
-            return 1/PowerExponent(base,-exponent);
+        if (exponent < 0) {
+            return 1 / PowerExponent(base, -exponent);
         }
-        return PowerExponent(base,exponent);
+        return PowerExponent(base, exponent);
     }
-    public double PowerExponent(double base,int exponent){
+
+    public double PowerExponent(double base, int exponent) {
         if (exponent == 0) {
             return 1;
         }
@@ -37,6 +38,6 @@ public class Power {
 
     public static void main(String[] args) {
         Power t = new Power();
-        System.out.println(t.Power(2,-4));
+        System.out.println(t.Power(2, -4));
     }
 }
